@@ -1,47 +1,29 @@
 document.addEventListener('DOMContentLoaded', function() {
     const projectsGrid = document.getElementById('projects-grid');
-    
-    // Imagens customizadas para cada repositório
-    const projectImages = {
-        'iltonns.github.io': 'https://raw.githubusercontent.com/iltonns/iltonns.github.io/main/assets/images/portfolio.jpg',
-        'projeto-olist': 'https://github.com/Iltonns/iltonns.github.io/blob/main/Olist%20Dashboard.JPG',
-        // Adicione outros projetos conforme necessário
-    };
+    const username = 'Iltonns'; // Seu usuário GitHub
 
-    fetch('https://api.github.com/users/iltonns/repos?sort=updated&direction=desc')
+    // Busca repositórios do GitHub
+    fetch(`https://api.github.com/users/${username}/repos?sort=updated&direction=desc`)
         .then(response => response.json())
-        .then(data => {
-            projectsGrid.innerHTML = '';
-            
-            data.forEach(repo => {
-                if (!repo.fork && repo.name !== 'iltonns') { // Filtra repositórios
+        .then(repos => {
+            repos.slice(0, 6).forEach(repo => { // Limita a 6 projetos
+                if (!repo.fork) { // Ignora forks
                     const projectCard = document.createElement('div');
                     projectCard.className = 'project-card';
-                    
                     projectCard.innerHTML = `
-                        <div class="project-image" style="background-image: url('${projectImages[repo.name] || 'https://via.placeholder.com/600x400?text=' + encodeURIComponent(repo.name)}')">
-                            <div class="project-overlay">
-                                <h3>${repo.name.replace(/-/g, ' ')}</h3>
-                                <p>${repo.description || 'Projeto sem descrição'}</p>
-                                <div class="project-links">
-                                    <a href="${repo.html_url}" target="_blank">GitHub</a>
-                                    ${repo.homepage ? `<a href="${repo.homepage}" target="_blank">Ver Projeto</a>` : ''}
-                                </div>
-                            </div>
+                        <img src="https://raw.githubusercontent.com/${username}/${repo.name}/main/screenshot.png" alt="${repo.name}" onerror="this.src='https://via.placeholder.com/300x200?text=Project+Image'">
+                        <div class="project-info">
+                            <h3>${repo.name.replace(/-/g, ' ')}</h3>
+                            <p>${repo.description || 'Sem descrição disponível.'}</p>
+                            <a href="${repo.html_url}" target="_blank">Ver no GitHub</a>
                         </div>
                     `;
-                    
                     projectsGrid.appendChild(projectCard);
                 }
             });
         })
         .catch(error => {
             console.error('Erro ao carregar projetos:', error);
-            projectsGrid.innerHTML = `
-                <div class="error-message">
-                    <p>Não foi possível carregar os projetos. Por favor, tente novamente mais tarde.</p>
-                    <a href="https://github.com/iltonns?tab=repositories" target="_blank">Ver no GitHub</a>
-                </div>
-            `;
+            projectsGrid.innerHTML = '<p>Não foi possível carregar os projetos. <a href="https://github.com/Iltonns">Veja no GitHub</a></p>';
         });
 });
