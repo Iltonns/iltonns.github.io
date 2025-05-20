@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Imagens customizadas para cada repositório
     const projectImages = {
         'iltonns.github.io': 'https://raw.githubusercontent.com/iltonns/iltonns.github.io/main/assets/images/portfolio.jpg',
-        'projeto-olist': 'https://raw.githubusercontent.com/iltonns/iltonns.github.io/main/assets/images/olist-dashboard.jpg',
+        'projeto-olist': 'https://github.com/Iltonns/iltonns.github.io/blob/main/Olist%20Dashboard.JPG',
         // Adicione outros projetos conforme necessário
     };
 
