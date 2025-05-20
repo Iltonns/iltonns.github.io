@@ -3,70 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio | Eleilton Santos</title>
+    <meta name="description" content="Portfólio de Eleilton Santos - Desenvolvedor Python & Analista de Dados">
+    <title>Eleilton Santos | Desenvolvedor Python & Analista de Dados</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Início</a></li>
-                <li><a href="#about">Sobre</a></li>
-                <li><a href="#projects">Projetos</a></li>
-                <li><a href="#tools">Ferramentas</a></li>
-                <li><a href="#contact">Contato</a></li>
-            </ul>
+    <header class="header">
+        <nav class="navbar">
+            <div class="navbar-container">
+                <a href="#home" class="logo">Eleilton<span>Santos</span></a>
+                <button class="mobile-menu-toggle" aria-label="Menu mobile">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link active">Início</a></li>
+                    <li><a href="#about" class="nav-link">Sobre</a></li>
+                    <li><a href="#projects" class="nav-link">Projetos</a></li>
+                    <li><a href="#tools" class="nav-link">Ferramentas</a></li>
+                    <li><a href="#contact" class="nav-link">Contato</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
 
     <section id="home" class="hero">
-        <h1>Eleilton Santos</h1>
-        <p>Desenvolvedor Python & Analista de Dados em formação.</p>
-        <a href="#projects" class="btn">Ver Projetos</a>
-    </section>
-
-    <section id="about" class="about">
-        <h2>Sobre Mim</h2>
-        <p>Sou Eleilton Santos, estudante de Análise e Desenvolvimento de Sistemas e Banco de Dados, em transição estratégica para a área de tecnologia com foco em Análise de Dados e Business Intelligence.</p>
-        <p>Atualmente, venho me especializando em:</p>
-        <ul>
-            <li>Python e SQL para automação e manipulação de dados</li>
-            <li>MySQL e modelagem de banco de dados</li>
-            <li>Power BI para criação de dashboards e visualização de dados</li>
-            <li>Fundamentos sólidos de BI e Data-Driven Decision Making</li>
-        </ul>
-        <p>Minha bagagem administrativa fortalece minha visão analítica, organizacional e de processos — e agora aplico esse know-how na resolução de problemas com tecnologia e dados. Busco colaborar em projetos que envolvam análise crítica, otimização de processos e transformação digital, onde eu possa gerar valor real com dados e insights.</p>
-    </section>
-
-    <section id="projects" class="projects">
-        <h2>Meus Projetos</h2>
-        <div class="projects-grid" id="projects-grid">
-            <!-- Projetos serão carregados via GitHub API -->
+        <div class="hero-content">
+            <h1 class="hero-title">Eleilton Santos</h1>
+            <p class="hero-subtitle">Desenvolvedor Python & Analista de Dados</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">Ver Projetos</a>
+                <a href="#contact" class="btn btn-secondary">Fale Comigo</a>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <a href="#about"><i class="fas fa-chevron-down"></i></a>
         </div>
     </section>
 
-    <section id="tools" class="tools">
-        <h2>Ferramentas que Utilizo</h2>
-        <div>
-            <i class="fab fa-python" title="Python"></i>
-            <i class="fas fa-database" title="SQL/MySQL"></i>
-            <i class="fas fa-chart-bar" title="Power BI"></i>
-            <i class="fab fa-git-alt" title="Git"></i>
-            <i class="fab fa-github" title="GitHub"></i>
+    <section id="about" class="about section">
+        <div class="section-container">
+            <h2 class="section-title">Sobre Mim</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Sou Eleilton Santos, estudante de Análise e Desenvolvimento de Sistemas e Banco de Dados, em transição estratégica para a área de tecnologia com foco em Análise de Dados e Business Intelligence.</p>
+                    <p>Atualmente, venho me especializando em:</p>
+                    <ul class="skills-list">
+                        <li><i class="fas fa-check"></i> Python e SQL para automação e manipulação de dados</li>
+                        <li><i class="fas fa-check"></i> MySQL e modelagem de banco de dados</li>
+                        <li><i class="fas fa-check"></i> Power BI para criação de dashboards e visualização de dados</li>
+                        <li><i class="fas fa-check"></i> Fundamentos sólidos de BI e Data-Driven Decision Making</li>
+                    </ul>
+                    <p>Minha bagagem administrativa fortalece minha visão analítica, organizacional e de processos — e agora aplico esse know-how na resolução de problemas com tecnologia e dados.</p>
+                </div>
+                <div class="about-image">
+                    <!-- Espaço para sua foto ou ilustração -->
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="contact" class="contact">
-        <h2>Contato</h2>
-        <div class="social-links">
-            <a href="https://github.com/Iltonns" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-            <a href="https://www.linkedin.com/in/iltonsantos/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    <section id="projects" class="projects section">
+        <div class="section-container">
+            <h2 class="section-title">Meus Projetos</h2>
+            <div class="projects-grid" id="projects-grid">
+                <!-- Projetos serão carregados via GitHub API -->
+                <div class="project-card skeleton">
+                    <div class="project-image"></div>
+                    <div class="project-info">
+                        <h3 class="project-title">Carregando...</h3>
+                        <p class="project-description">Aguarde enquanto buscamos os projetos.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2024 Eleilton Santos. Todos os direitos reservados.</p>
+    <section id="tools" class="tools section">
+        <div class="section-container">
+            <h2 class="section-title">Ferramentas que Utilizo</h2>
+            <div class="tools-grid">
+                <div class="tool-card" data-tool="Python">
+                    <i class="fab fa-python"></i>
+                    <span>Python</span>
+                </div>
+                <div class="tool-card" data-tool="SQL">
+                    <i class="fas fa-database"></i>
+                    <span>SQL/MySQL</span>
+                </div>
+                <div class="tool-card" data-tool="Power BI">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Power BI</span>
+                </div>
+                <div class="tool-card" data-tool="Git">
+                    <i class="fab fa-git-alt"></i>
+                    <span>Git</span>
+                </div>
+                <div class="tool-card" data-tool="GitHub">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact section">
+        <div class="section-container">
+            <h2 class="section-title">Vamos Conversar</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p>Estou interessado em oportunidades de trabalho freelance e colaborações. Se você tem um projeto que deseja começar ou quer me conhecer melhor, entre em contato!</p>
+                    <div class="social-links">
+                        <a href="https://github.com/Iltonns" target="_blank" class="social-link">
+                            <i class="fab fa-github"></i> /Iltonns
+                        </a>
+                        <a href="https://www.linkedin.com/in/iltonsantos/" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin"></i> /iltonsantos
+                        </a>
+                    </div>
+                </div>
+                <form class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Seu nome" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Seu e-mail" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Sua mensagem" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; <span id="current-year">2024</span> Eleilton Santos. Todos os direitos reservados.</p>
+            <a href="#home" class="back-to-top">
+                <i class="fas fa-arrow-up"></i>
+            </a>
+        </div>
     </footer>
 
     <script src="script.js"></script>
