@@ -85,158 +85,103 @@
         </div>
     </section>
 
+
+    <!-- Projetos -->
     <section id="projects" class="projects section">
-        <div class="section-container">
-            <h2 class="section-title">Meus Projetos</h2>
-            <div class="projects-grid" id="projects-grid">
-                <!-- Exemplo de projeto destacado manualmente -->
-                <div class="project-card fade-in">
-                    <div class="project-image">
-                        <img src="https://raw.githubusercontent.com/Iltonns/seu-projeto/main/screenshot.png"
-                             alt="Screenshot do projeto Nome do Projeto"
-                             onerror="this.src='https://via.placeholder.com/350x200?text=Projeto+Sem+Imagem';"
-                             loading="lazy"
-                             style="width:100%;height:100%;object-fit:cover;border-radius:10px 10px 0 0;">
+    <div class="section-container">
+        <h2 class="section-title">Meus Projetos</h2>
+        <div id="projects-loading" style="display:none;text-align:center;margin-bottom:20px;">
+            <i class="fas fa-spinner fa-spin"></i> Carregando projetos...
+        </div>
+            <div class="project-card">
+                <!-- Projeto 1 -->
+                <div class="project-image">
+                    <img src="assets/Dashboard-olist.png" alt="Dashboard de Análise de Vendas" loading="lazy">
+                </div>
+                <div class="project-info">
+                    <h3>Análise de Desempenho de Vendas - Olist E-commerce</h3>
+                    <p>Dashboard abrangente com insights sobre desempenho de vendas, categorias de produtos e métodos de pagamento, 
+                    desenvolvido com Power BI e análise de dados estratégicos.</p>
+                    <div class="project-tech">
+                        <span>Power BI</span>
+                        <span>DAX</span>
                     </div>
-                    <div class="project-item">
-    <!--Projeto 1-->
-    <div class="project-item">
-    <!-- Imagem manual do seu projeto (substitua o src) -->
-    <img src="https://github.com/Iltonns/iltonns.github.io/blob/main/assets/Dashboard-olist.png"
-         alt="Dashboard de Análise de Vendas" 
-             loading="lazy">
-    
-    <div class="project-info">
-        <h3>Análise de Desempenho de Vendas - Olist E-commerce</h3>
-        <p>Dashboard abrangente com insights sobre desempenho de vendas, categorias de produtos e métodos de pagamento, desenvolvido com Power BI e análise de dados estratégicos.</p>
-        
-        <div class="project-tech">
-            <span>Power BI</span>
-            <span>DAX</span>
-            <span>Análise Estratégica</span>
-        </div>
-        
-        <div class="project-links">
-            <a href="https://github.com/Iltonns/Dashboard-de-vis-o-geral-de-vendas-Olist" 
-               target="_blank" 
-               class="btn-link"
-               aria-label="Ver repositório no GitHub">
-                <i class="fab fa-github"></i> Ver no GitHub
-            </a>
-            <a href="https://app.powerbi.com/groups/me/reports/00d0cd05-4f5e-4842-b792-bdc888451077/ReportSection?experience=power-bi" 
-               target="_blank" 
-               class="btn-link primary"
-               aria-label="Ver projeto publicado">
-                <i class="fas fa-chart-bar"></i> Ver Dashboard
-            </a>
-        </div>
-    </div>
-    </div>
-
-    <!--Projeto 2-->
-    <div class="project-item">
-    <!-- Imagem manual do seu projeto (substitua o src) -->
-    <img src="https://github.com/Iltonns/iltonns.github.io/blob/main/assets/Gatiti-Petshop.png"
-         alt="Dashboard de Análise de Vendas" 
-            loading="lazy">
-    
-    <div class="project-info">
-        <h3>Análise de Desempenho de Vendas - Gatito Petshop</h3>
-        <p>A ferramenta possibilita a identificação de padrões de compra, comportamento dos clientes e contribui para a tomada de decisões estratégicas.</p>
-        
-        <div class="project-tech">
-            <span>Power BI</span>
-            <span>Análise Estratégica</span>
-            <span>Documentação e Modelagem</span>
-        </div>
-        
-        <div class="project-links">
-            <a href="https://github.com/Iltonns/Dashboard-de-vis-o-geral-de-vendas-Gatito-Pet-vendas" 
-               target="_blank" 
-               class="btn-link"
-               aria-label="Ver repositório no GitHub">
-                <i class="fab fa-github"></i> Ver no GitHub
-            </a>
-            <a href="https://app.powerbi.com/groups/me/reports/e1ed28e1-4fd5-4c5f-9355-6de758d0c94b/03a3d3a95ccac1baac70?experience=power-bi" 
-               target="_blank" 
-               class="btn-link primary"
-               aria-label="Ver projeto publicado">
-                <i class="fas fa-chart-bar"></i> Ver Dashboard
-            </a>
-        </div>
-    </div>
-    </div>
-
-    <!--Projeto 3-->
-    <div class="project-item">
-    <!-- Imagem manual do seu projeto (substitua o src) -->
-    <img src="https://github.com/Iltonns/iltonns.github.io/blob/main/assets/An%C3%A1lise%20de%20dados%20cm%20Python.png"
-         alt="Análise de Uniformes" 
-            loading="lazy">
-    
-    <div class="project-info">
-        <h3>Análise e Gerência de Distribuição de Uniformes - Polícia Federal</h3>
-        <p>O projeto permite identificar falhas na distribuição de uniformes, listar servidores com pendências e gerar insights para melhorar o processo de entrega. 
-            Além disso, os resultados são organizados e exportados de forma clara para facilitar a tomada de decisões..</p>
-        
-        <div class="project-tech">
-            <span>Python</span>
-            <span>Pandas</span>
-        </div>
-        
-    </div>
-    </div>
-    
-     <!--Projeto 4-->
-    <div class="project-item">
-    <!-- Imagem manual do seu projeto (substitua o src) -->
-    <img src="https://github.com/Iltonns/iltonns.github.io/blob/main/assets/An%C3%A1lise%20de%20dados%20cm%20Python.png"
-         alt="Análise de Uniformes" 
-            loading="lazy">
-    
-    <div class="project-info">
-        <h3>Modelagem de dados e documentação no Power BI</h3>
-        <p>O projeto permite identificar falhas na distribuição de uniformes, listar servidores com pendências e gerar insights para melhorar o processo de entrega. 
-            Além disso, os resultados são organizados e exportados de forma clara para facilitar a tomada de decisões..</p>
-        
-        <div class="project-tech">
-            <span>Python</span>
-            <span>Pandas</span>
-        </div>
-        
-    </div>
-    </div>
-    <!-- Repita o bloco acima para cada projeto que deseja destacar -->
-        
-    </section>
-
-    <section id="tools" class="tools section">
-        <div class="section-container">
-            <h2 class="section-title">Ferramentas</h2>
-            <div class="tools-grid">
-                <div class="tool-card" data-tool="Python" aria-label="Python">
-                    <i class="fab fa-python" aria-hidden="true"></i>
-                    <span>Python</span>
-                </div>
-                <div class="tool-card" data-tool="SQL" aria-label="SQL/MySQL">
-                    <i class="fas fa-database" aria-hidden="true"></i>
-                    <span>SQL/MySQL</span>
-                </div>
-                <div class="tool-card" data-tool="Power BI" aria-label="Power BI">
-                    <i class="fas fa-chart-bar" aria-hidden="true"></i>
-                    <span>Power BI</span>
-                </div>
-                <div class="tool-card" data-tool="Git" aria-label="Git">
-                    <i class="fab fa-git-alt" aria-hidden="true"></i>
-                    <span>Git</span>
-                </div>
-                <div class="tool-card" data-tool="GitHub" aria-label="GitHub">
-                    <i class="fab fa-github" aria-hidden="true"></i>
-                    <span>GitHub</span>
+                    <div class="project-links">
+                    <a href="https://github.com/Iltonns/Dashboard-de-vis-o-geral-de-vendas" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="https://app.powerbi.com/groups/me/reports/00d0cd05-4f5e-4842-b792-bdc888451077/cffc4d64d739205de520?experience=power-bi"><i class="fas fa-external-link-alt"></i> Dashboard</a>
                 </div>
             </div>
         </div>
-    </section>
+
+        <!-- Projeto 2 -->
+        <div class="project-card">
+            <div class="project-image">
+                <img src="assets/Gatiti-Petshop.png" alt="Dashboard de vendas do Gatito Petshop no Power BI" loading="lazy">
+            </div>
+            <div class="project-info">
+                <h3>Análise de Desempenho de Vendas - Gatito Petshop</h3>
+                <p>Dashboard com insights sobre desempenho de vendas, categorias de produtos e métodos de pagamento.</p>
+                <div class="project-tech">
+                    <span>Power BI</span>
+                    <span>Análise Estratégica</span>
+                    <span>Documentação e Modelagem</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/Iltonns/Dashboard-de-vis-o-geral-de-vendas-Gatito-Pet-vendas" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="https://app.powerbi.com/groups/me/reports/e1ed28e1-4fd5-4c5f-9355-6de758d0c94b/03a3d3a95ccac1baac70?experience=power-bi" target="_blank" rel="noopener noreferrer">
+                        <i class="fas fa-external-link-alt"></i> Dashboard</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projeto 3 -->
+        <div class="project-card">
+            <div class="project-image">
+                <img src="assets/Análise de dados cm Python.png" 
+                    alt="Gráfico de análise de dados com Python para distribuição de uniformes" loading="lazy">
+            </div>
+            <div class="project-info">
+                <h3>Análise sobre Distribuição de Uniformes - Polícia Federal</h3>
+                <p>O projeto permite identificar falhas na distribuição de uniformes, listar servidores com pendências e gerar insights para melhorar o processo de entrega. 
+                    Além disso, os resultados são organizados e exportados de forma clara para facilitar a tomada de decisões.</p>
+                <div class="project-tech">
+                    <span>Python</span>
+                    <span>Pandas</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/Iltonns/Analise-de-dados-com-p-python" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projeto 4  -->
+        <div class="project-card">
+            <div class="project-image">
+                <img src="assets/Power BI - Power Query.JPG" alt="Modelagem de dados e documentação no Power BI" loading="lazy">
+            </div>
+            <div class="project-info">
+                <h3>Modelagem de dados e documentação no Power BI</h3>
+                <p>Modelagem dimensional completa para análise de vendas e estoque.</p>
+                <div class="project-tech">
+                    <span>Power BI</span>
+                    <span>Power Query</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/Iltonns/Modelagem-de-dados-com-Power-BI" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</section>
 
     <section id="contact" class="contact section">
         <div class="section-container">
@@ -295,17 +240,26 @@
         feedback.style.display = 'block';
         feedback.style.color = 'green';
         feedback.textContent = 'Mensagem enviada com sucesso! Obrigado pelo contato.';
+        feedback.scrollIntoView({ behavior: 'smooth', block: 'center' });
         setTimeout(() => { feedback.style.display = 'none'; }, 4000);
         this.reset();
     });
 
     // Botão de alternância de tema claro/escuro
     const themeToggle = document.getElementById('theme-toggle');
+
+    // Carregar preferência ao iniciar
+    if(localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-theme');
+        themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+    }
     themeToggle.addEventListener('click', () => {
         document.body.classList.toggle('dark-theme');
-        themeToggle.innerHTML = document.body.classList.contains('dark-theme')
+        const isDark = document.body.classList.contains('dark-theme');
+        themeToggle.innerHTML = isDark
             ? '<i class="fas fa-sun"></i>'
             : '<i class="fas fa-moon"></i>';
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
     });
 
     // Exemplo de animação suave ao rolar (fade-in)
