@@ -291,8 +291,8 @@ h1, h2, h3 {
 /* Projetos - Versão Simplificada */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(4, 1fr); /* 4 colunas fixas */
+    gap: 2rem; /* Espaçamento entre os cards */
 }
 
 .project-card {
@@ -633,6 +633,10 @@ a:focus, button:focus, input:focus, textarea:focus {
     .about-image {
         order: -1;
         height: 300px;
+    }
+    
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
