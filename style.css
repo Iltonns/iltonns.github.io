@@ -229,45 +229,64 @@ h1, h2, h3 {
     border-radius: 2px;
 }
 
-/* Sobre Mim */
+/* Sobre Mim - Layout com imagem ao lado */
 .about-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
+    display: flex;
+    gap: 4rem;
+    align-items: flex-start;
 }
 
 .about-text {
-    line-height: 1.8;
+    flex: 1.5;
+    line-height: 1.7;
+    color: var(--text-color);
 }
 
+.about-image {
+    flex: 1;
+    min-width: 300px;
+    border-radius: 8px;
+    height: 320px;
+    background: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80') center/cover no-repeat;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+    }
+    
+    .about-image {
+        width: 100%;
+        min-width: auto;
+        order: -1; /* Coloca a imagem acima em mobile */
+    }
+}
+
+/* Mantenha o restante do CSS original abaixo */
 .about-text p {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.8rem;
+    font-size: 1.1rem;
 }
 
 .skills-list {
     list-style: none;
-    margin: 1.5rem 0;
+    margin: 2rem 0;
+    padding-left: 0;
 }
 
 .skills-list li {
-    margin-bottom: 0.8rem;
+    margin-bottom: 1rem;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    font-size: 1rem;
+    line-height: 1.5;
 }
 
-.skills-list i {
-    color: var(--secondary-color);
-    margin-right: 0.5rem;
-}
-
-.about-image {
-    background: #ddd;
-    border-radius: 10px;
-    height: 400px;
-    background: url('https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80') center/cover;
-    box-shadow: var(--shadow);
-}
 
 /* Projetos */
 .projects-grid {
