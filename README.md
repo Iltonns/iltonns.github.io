@@ -41,6 +41,3 @@ Acesse o portfólio em: [https://iltonns.github.io](https://iltonns.github.io)
 - LinkedIn: [Eleilton Santos](https://www.linkedin.com/in/iltonsantos/)
 - E-mail: ilton.sa@outlook.com
 
-## 📄 Licença
-
-Este projeto está sob a licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
