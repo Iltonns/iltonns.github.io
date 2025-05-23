@@ -471,6 +471,52 @@ h1, h2, h3 {
     display: block;
 }
 
+/* Ferramentas */
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 1.5rem;
+    justify-items: center;
+}
+
+.tool-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 1rem;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    cursor: default;
+    width: 100%;
+}
+
+.tool-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.tool-card i {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.tool-card span {
+    font-weight: 600;
+    color: var(--text-color);
+
+    text-align: center;
+    width: 100%;
+    display: block;
+}
+
+/* Formatação de texto */
+.text-center {
+    text-align: center;
+}
+
 /* Contato */
 .contact-content {
     display: grid;
