@@ -26,9 +26,13 @@ Acesse o portfólio em: [https://iltonns.github.io](https://iltonns.github.io)
 ## 📂 Estrutura do Projeto
 
 ├── assets/ # Arquivos estáticos (imagens, ícones)
+
 ├── css/ # Folhas de estilo
+
 ├── js/ # Scripts JavaScript
+
 ├── index.html # Página principal
+
 └── README.md # Documentação
 
 
