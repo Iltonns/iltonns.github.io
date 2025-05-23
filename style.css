@@ -425,14 +425,23 @@ h1, h2, h3 {
     font-size: 0.9rem;
 }
 
-/* Ferramentas */
+/* Ferramentas - Versão Centralizada */
+.tools-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 0 1rem;
+}
+
 .tools-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(120px, 140px)); /* Largura mais consistente */
     gap: 1.5rem;
+    justify-content: center; /* Centraliza os cards na grid */
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 1rem 0;
 }
 
 .tool-card {
@@ -440,7 +449,7 @@ h1, h2, h3 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 1.5rem;
+    padding: 1.5rem 0.5rem; /* Padding vertical maior */
     background: #fff;
     border-radius: 10px;
     box-shadow: var(--shadow);
@@ -448,16 +457,17 @@ h1, h2, h3 {
     cursor: default;
     width: 100%;
     min-height: 140px;
+    aspect-ratio: 1/1; /* Mantém proporção quadrada */
 }
 
 .tool-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
 }
 
 .tool-card i {
     font-size: 2.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
     color: var(--primary-color);
 }
 
@@ -465,8 +475,8 @@ h1, h2, h3 {
     font-weight: 600;
     color: var(--text-color);
     text-align: center;
-    width: 100%;
-    display: block;
+    font-size: 0.9rem; /* Tamanho de fonte ajustado */
+    padding: 0 0.5rem; /* Evita quebra de linha */
 }
 
 /* Formatação de texto */
