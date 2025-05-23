@@ -1,4 +1,103 @@
 /* Reset e Variáveis */
+/* Estilos para o card principal */
+.card-perfil {
+    width: 90%;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-areas:
+        "header"
+        "info"
+        "score"
+        "projetos"
+        "ferramentas"
+        "contato";
+    gap: 1.5rem;
+}
+
+/* Cabeçalho do card */
+.card-header {
+    grid-area: header;
+    text-align: center;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #3498db;
+}
+
+/* Seções do card */
+.card-info {
+    grid-area: info;
+}
+.card-score {
+    grid-area: score;
+}
+.card-projetos {
+    grid-area: projetos;
+}
+.card-ferramentas {
+    grid-area: ferramentas;
+}
+.card-contato {
+    grid-area: contato;
+}
+
+/* Estilo para todas as seções */
+.card-section {
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+/* Títulos das seções */
+.card-section h3 {
+    color: #2c3e50;
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+}
+
+/* Layout para tablets */
+@media (min-width: 600px) {
+    .card-perfil {
+        grid-template-areas:
+            "header header"
+            "info score"
+            "projetos ferramentas"
+            "contato contato";
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Layout para desktop */
+@media (min-width: 900px) {
+    .card-perfil {
+        grid-template-areas:
+            "header header header header"
+            "info score projetos ferramentas"
+            "contato contato contato contato";
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Ajustes para mobile muito pequeno */
+@media (max-width: 400px) {
+    .card-perfil {
+        width: 95%;
+        padding: 1rem;
+    }
+    
+    .card-section {
+        padding: 0.8rem;
+    }
+    
+    .card-section h3 {
+        font-size: 1.1rem;
+    }
+}
+
+
 :root {
     --primary-color: #2c3e50;
     --secondary-color: #3498db;
