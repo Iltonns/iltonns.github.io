@@ -38,8 +38,8 @@ Acesse o portfólio em: [https://iltonns.github.io](https://iltonns.github.io)
 
 ## 📬 Contato
 
-- LinkedIn: [Seu perfil](URL)
-- E-mail: seuemail@exemplo.com
+- LinkedIn: [Seu perfil](https://www.linkedin.com/in/iltonsantos/)
+- E-mail: ilton.sa@outlook.com
 
 ## 📄 Licença
 
