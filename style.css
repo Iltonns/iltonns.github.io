@@ -395,6 +395,7 @@ h1, h2, h3 {
     color: var(--text-color);
 }
 
+/* Corrigido: removido o background antigo */
 .about-image {
     flex: 1;
     min-width: 280px;
@@ -402,8 +403,10 @@ h1, h2, h3 {
     display: flex;
     align-items: center;
     justify-content: center;
+    /* background: removido */
 }
 
+/* Estilo da nova imagem que substitui o fundo antigo */
 .about-image img {
     width: 100%;
     height: auto;
@@ -434,6 +437,7 @@ h1, h2, h3 {
         height: auto;
     }
 }
+
 
 
 /* Mantenha o restante do CSS original abaixo */
