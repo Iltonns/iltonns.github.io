@@ -395,24 +395,22 @@ h1, h2, h3 {
     color: var(--text-color);
 }
 
-/* Corrigido: removido o background antigo */
 .about-image {
     flex: 1;
     min-width: 280px;
     max-width: 100%;
     display: flex;
-    align-items: center;
+    align-items: stretch; /* Deixa o conteúdo ocupar toda a altura disponível */
     justify-content: center;
-    /* background: removido */
 }
 
-/* Estilo da nova imagem que substitui o fundo antigo */
 .about-image img {
-    width: 100%;
-    height: auto;
+    height: 100%;            /* Faz a imagem preencher a altura */
+    width: auto;             /* Mantém a proporção original */
     border-radius: 8px;
     box-shadow: var(--shadow);
     transition: transform 0.3s ease;
+    object-fit: cover;       /* Preenche a área sem distorcer */
 }
 
 /* Efeito sutil de zoom ao passar o mouse */
