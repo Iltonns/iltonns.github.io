@@ -386,6 +386,7 @@ h1, h2, h3 {
     display: flex;
     gap: 4rem;
     align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 .about-text {
@@ -396,28 +397,44 @@ h1, h2, h3 {
 
 .about-image {
     flex: 1;
-    min-width: 300px;
+    min-width: 280px;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
     border-radius: 8px;
-    height: 320px;
-    background: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80') center/cover no-repeat;
     box-shadow: var(--shadow);
-    position: relative;
-    overflow: hidden;
     transition: transform 0.3s ease;
+}
+
+/* Efeito sutil de zoom ao passar o mouse */
+.about-image img:hover {
+    transform: scale(1.03);
 }
 
 /* Estilos responsivos */
 @media (max-width: 768px) {
     .about-content {
         flex-direction: column;
+        gap: 2rem;
     }
-    
+
     .about-image {
+        order: -1; /* Imagem vai para cima em mobile */
         width: 100%;
-        min-width: auto;
-        order: -1; /* Coloca a imagem acima em mobile */
+    }
+
+    .about-image img {
+        width: 100%;
+        height: auto;
     }
 }
+
 
 /* Mantenha o restante do CSS original abaixo */
 .about-text p {
