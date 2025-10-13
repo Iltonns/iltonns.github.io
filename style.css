@@ -1949,11 +1949,12 @@ body.dark-theme .skill-tag {
 
 .footer-main {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
     gap: 3rem;
     margin-bottom: 3rem;
     padding-bottom: 3rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    align-items: start; /* Alinha o topo dos cards */
 }
 
 .footer-brand {
@@ -2072,9 +2073,17 @@ body.dark-theme .skill-tag {
 
 .footer-bottom {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Centraliza o conteúdo */
     align-items: center;
     padding-top: 2rem;
+}
+
+.footer-bottom-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
 }
 
 .footer-copyright p {
@@ -2096,6 +2105,10 @@ body.dark-theme .skill-tag {
 .footer-social {
     display: flex;
     gap: 1rem;
+}
+
+.footer-social-bottom {
+    margin-top: 0.25rem;
 }
 
 .footer-social a {
@@ -2164,6 +2177,7 @@ body.dark-theme .skill-tag {
         flex-direction: column;
         gap: 1.5rem;
         text-align: center;
+        align-items: center;
     }
     
     .back-to-top {
