@@ -1948,17 +1948,36 @@ body.dark-theme .skill-tag {
 }
 
 .footer-main {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    flex-direction: column;
     gap: 3rem;
     margin-bottom: 3rem;
     padding-bottom: 3rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    align-items: start; /* Alinha o topo dos cards */
 }
 
 .footer-brand {
-    grid-column: span 1;
+    margin-bottom: 1rem;
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+}
+
+/* Tablet: 2 colunas */
+@media (max-width: 1024px) {
+    .footer-links {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Mobile: 1 coluna */
+@media (max-width: 768px) {
+    .footer-links {
+        grid-template-columns: 1fr;
+    }
 }
 
 .footer-logo h3 {
@@ -2155,7 +2174,7 @@ body.dark-theme .skill-tag {
 
 /* Footer Responsive */
 @media (max-width: 1024px) {
-    .footer-main {
+    .footer-links {
         grid-template-columns: 1fr 1fr;
         gap: 2rem;
     }
@@ -2167,10 +2186,14 @@ body.dark-theme .skill-tag {
     }
     
     .footer-main {
-        grid-template-columns: 1fr;
         gap: 2rem;
         margin-bottom: 2rem;
         padding-bottom: 2rem;
+    }
+    
+    .footer-links {
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
     
     .footer-bottom {
