@@ -170,6 +170,54 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // CV Download functionality with feedback
+    const cvDownloadButton = document.querySelector('a[href*="cv-eleilton-santos.pdf"]');
+    if (cvDownloadButton) {
+        cvDownloadButton.addEventListener('click', function(e) {
+            // Visual feedback
+            const originalText = this.innerHTML;
+            const originalClass = this.className;
+            
+            // Change button appearance during download
+            this.innerHTML = '<i class="fas fa-spinner fa-spin" aria-hidden="true"></i> Baixando...';
+            this.classList.add('downloading');
+            
+            // Check if file exists before download
+            fetch(this.href, { method: 'HEAD' })
+                .then(response => {
+                    if (response.ok) {
+                        // File exists, proceed with download
+                        setTimeout(() => {
+                            this.innerHTML = '<i class="fas fa-check" aria-hidden="true"></i> Download Concluído!';
+                            this.style.backgroundColor = '#27ae60';
+                            
+                            // Reset button after 2 seconds
+                            setTimeout(() => {
+                                this.innerHTML = originalText;
+                                this.className = originalClass;
+                                this.style.backgroundColor = '';
+                            }, 2000);
+                        }, 1000);
+                    } else {
+                        // File not found
+                        throw new Error('Arquivo não encontrado');
+                    }
+                })
+                .catch(error => {
+                    // Error handling
+                    this.innerHTML = '<i class="fas fa-exclamation-triangle" aria-hidden="true"></i> Erro no Download';
+                    this.style.backgroundColor = '#e74c3c';
+                    
+                    // Reset button after 3 seconds
+                    setTimeout(() => {
+                        this.innerHTML = originalText;
+                        this.className = originalClass;
+                        this.style.backgroundColor = '';
+                    }, 3000);
+                });
+        });
+    }
+
     // Loading animation for projects (enhanced)
     const projectsSection = document.getElementById('projects');
     if (projectsSection) {

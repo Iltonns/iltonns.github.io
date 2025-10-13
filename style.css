@@ -472,6 +472,19 @@ h1, h2, h3 {
     box-shadow: var(--shadow);
 }
 
+/* Estados do botão de download */
+.btn.downloading {
+    background: var(--primary-color) !important;
+    color: white !important;
+    border-color: var(--primary-color) !important;
+    cursor: wait;
+    pointer-events: none;
+}
+
+.btn.downloading:hover {
+    transform: none;
+}
+
 .btn i {
     margin-right: 0.5rem;
 }
