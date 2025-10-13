@@ -308,19 +308,20 @@ h1, h2, h3 {
     50% { opacity: 0.5; }
 }
 
-/* Foto de perfil no card de início */
+/* Foto de perfil */
 .profile-pic {
-    width: 180px; /* Reduzindo de 260px */
-    height: 180px;
-    border-radius: 50%; /* Formato circular (mais moderno) */
-    border: 4px solid var(--secondary-color); /* Destaque */
-    box-shadow: 0 4px 20px rgba(52, 152, 219, 0.3); /* Sombra azul */
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     object-fit: cover;
     transition: transform 0.3s ease;
+    margin-bottom: 1rem;
 }
 
 .profile-pic:hover {
-    transform: scale(1.05); /* Efeito sutil ao passar o mouse */
+    transform: scale(1.05);
 }
 
 /* Ajustes no título e subtítulo */
@@ -1101,6 +1102,32 @@ h1, h2, h3 {
     border-color: #3b82f6 !important;
 }
 
+/* Project Highlights */
+.project-highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.8rem;
+    margin: 1rem 0;
+}
+
+.highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    background: #f8f9fa;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    color: #495057;
+}
+
+.highlight-item i {
+    color: #3498db;
+    font-size: 0.9rem;
+    width: 16px;
+    text-align: center;
+}
+
 /* Responsividade */
 @media (max-width: 1200px) {
     .projects-grid {
@@ -1292,8 +1319,32 @@ h1, h2, h3 {
     font-weight: 600;
     color: var(--text-color);
     text-align: center;
-    font-size: 0.9rem; /* Tamanho de fonte ajustado */
-    padding: 0 0.5rem; /* Evita quebra de linha */
+    font-size: 0.9rem;
+    padding: 0 0.5rem;
+}
+
+.tool-card small {
+    font-size: 0.7rem;
+    color: var(--secondary-color);
+    font-weight: 500;
+    margin-top: 0.2rem;
+}
+
+.featured-tool {
+    border: 2px solid var(--secondary-color);
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(52, 152, 219, 0.2);
+}
+
+.featured-tool i {
+    color: #3776ab; /* Cor oficial do Python */
+    font-size: 3rem;
+}
+
+.featured-tool:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 30px rgba(52, 152, 219, 0.3);
 }
 
 /* Formatação de texto */
@@ -1493,6 +1544,31 @@ body.dark-theme .back-to-top:hover {
     color: var(--text-light);
 }
 
+/* Dark theme para novos elementos */
+body.dark-theme .featured-tool {
+    background: linear-gradient(135deg, #23272f, #2c3340);
+    border-color: var(--secondary-color);
+}
+
+body.dark-theme .highlight-item {
+    background: #2c3340;
+    color: var(--text-light);
+}
+
+body.dark-theme .timeline-content {
+    background: #23272f;
+    color: var(--text-light);
+}
+
+body.dark-theme .timeline-marker {
+    background: var(--secondary-color);
+}
+
+body.dark-theme .skill-tag {
+    background: #2c3340;
+    color: var(--text-light);
+}
+
 /* Fade-in animation para seções */
 .fade-in {
     animation: fadeIn 1.2s ease;
@@ -1545,29 +1621,30 @@ body.dark-theme #projects-loading {
     outline-offset: 2px;
 }
 
-/* Novas classes para o layout da seção hero */
+/* Layout da seção hero */
 .hero-content-row {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 3rem;
-    max-width: 1000px;
+    justify-content: space-between;
+    gap: 4rem;
+    max-width: 1200px;
     margin: 0 auto;
     width: 100%;
-    padding-top: 4rem;
-    padding-bottom: 2rem;
 }
 
 .hero-image {
     flex: 0 0 auto;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    order: 2;
 }
 
 .hero-content {
-    flex: 1 1 0;
+    flex: 1;
     text-align: left;
+    order: 1;
 }
 
 /* Mobile Navigation */
@@ -1608,16 +1685,22 @@ body.dark-theme #projects-loading {
 @media (max-width: 900px) {
     .hero-content-row {
         flex-direction: column;
-        gap: 1.5rem;
-        padding-top: 2rem;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .hero-image {
+        order: 1;
     }
     
     .hero-content {
+        order: 2;
         text-align: center;
     }
     
     .hero-stats {
-        gap: 1rem;
+        justify-content: center;
+        gap: 1.5rem;
     }
     
     .stat-number {
