@@ -1216,6 +1216,7 @@ h1, h2, h3 {
 }
 
 .skill-level {
+    display: block !important; /* Força a exibição em mobile */
     font-size: 0.85rem;
     color: #7f8c8d;
     font-weight: 500;
@@ -1302,7 +1303,7 @@ h1, h2, h3 {
 }
 
 .tool-card {
-    display: flex;
+    display: flex !important; /* Força a exibição em mobile */
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -2780,6 +2781,135 @@ html, body {
     
     .hero-title {
         font-size: 2.5rem;
+    }
+}
+
+/* Mobile specific fixes for Skills section */
+@media (max-width: 768px) {
+    /* Garantir que skill level apareça */
+    .skill-level {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    /* Garantir que ferramentas apareçam */
+    .tools-grid {
+        grid-template-columns: repeat(2, 1fr) !important; /* 2 colunas no mobile */
+        gap: 1rem;
+        padding: 1rem 0.5rem;
+        width: 100%;
+        overflow: visible;
+    }
+    
+    .tool-card {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        min-height: 120px;
+        padding: 1rem 0.5rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .tool-card i {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+        display: block !important;
+    }
+    
+    .tool-card span {
+        font-size: 0.8rem;
+        display: block !important;
+    }
+    
+    .tool-card small {
+        display: block !important;
+        font-size: 0.65rem;
+    }
+    
+    /* Ajustar skill items para mobile */
+    .skill-item {
+        padding: 0.8rem;
+        margin-bottom: 0.5rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .skill-info {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        margin-bottom: 0.5rem;
+        width: 100%;
+    }
+    
+    .skill-name {
+        font-size: 0.9rem;
+        display: block !important;
+    }
+    
+    .skill-bar {
+        display: block !important;
+        visibility: visible !important;
+        width: 100%;
+    }
+    
+    .skill-progress {
+        display: block !important;
+        visibility: visible !important;
+    }
+    
+    .skill-details {
+        display: block !important;
+        font-size: 0.75rem;
+    }
+    
+    /* Garantir que todas as categorias de skills apareçam */
+    .skills-categories {
+        display: grid !important;
+        gap: 2rem;
+        width: 100%;
+    }
+    
+    .skill-category {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        width: 100%;
+        padding: 1.5rem 1rem;
+    }
+    
+    .skills-list {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1rem;
+        width: 100%;
+    }
+}
+
+/* Small mobile devices (< 480px) */
+@media (max-width: 480px) {
+    .tools-grid {
+        grid-template-columns: repeat(2, 1fr) !important; /* Manter 2 colunas em telas menores */
+        gap: 0.8rem;
+    }
+    
+    .tool-card {
+        min-height: 100px;
+        padding: 0.8rem 0.3rem;
+    }
+    
+    .tool-card i {
+        font-size: 1.8rem;
+    }
+    
+    .tool-card span {
+        font-size: 0.75rem;
+    }
+    
+    .skill-category {
+        padding: 1rem 0.75rem;
     }
 }
 
