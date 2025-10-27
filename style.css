@@ -960,6 +960,11 @@ h1, h2, h3 {
     color: white;
 }
 
+.tech-badge {
+    background: rgba(230, 126, 34, 0.9);
+    color: white;
+}
+
 .project-image {
     height: 200px;
     overflow: hidden;
@@ -1025,6 +1030,70 @@ h1, h2, h3 {
 
 .project-info {
     padding: 1.5rem;
+}
+
+/* Project Access Info */
+.project-access-info {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin: 1.25rem 0;
+    color: white;
+    box-shadow: 0 4px 6px rgba(102, 126, 234, 0.2);
+}
+
+.access-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+}
+
+.access-header i {
+    font-size: 1.1rem;
+}
+
+.access-credentials {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-left: 1.5rem;
+}
+
+.credential-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    backdrop-filter: blur(10px);
+}
+
+.credential-item i {
+    width: 20px;
+    text-align: center;
+    opacity: 0.9;
+}
+
+.credential-item strong {
+    margin-right: 0.25rem;
+}
+
+@media (max-width: 768px) {
+    .project-access-info {
+        padding: 0.875rem 1rem;
+    }
+    
+    .access-credentials {
+        padding-left: 0;
+    }
+    
+    .credential-item {
+        font-size: 0.85rem;
+    }
 }
 
 .project-highlights {
@@ -1293,7 +1362,7 @@ h1, h2, h3 {
 
 .tools-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 140px)); /* Largura mais consistente */
+    grid-template-columns: repeat(4, 1fr); /* 4 colunas no desktop */
     gap: 1.5rem;
     justify-content: center; /* Centraliza os cards na grid */
     width: 100%;
@@ -1315,7 +1384,6 @@ h1, h2, h3 {
     cursor: default;
     width: 100%;
     min-height: 140px;
-    aspect-ratio: 1/1; /* Mantém proporção quadrada */
 }
 
 .tool-card:hover {
@@ -2779,6 +2847,10 @@ html, body {
         gap: 2rem;
     }
     
+    .tools-grid {
+        grid-template-columns: repeat(3, 1fr) !important; /* 3 colunas em tablets */
+    }
+    
     .hero-title {
         font-size: 2.5rem;
     }
@@ -2786,46 +2858,80 @@ html, body {
 
 /* Mobile specific fixes for Skills section */
 @media (max-width: 768px) {
+    /* Garantir que o container de skills não limite a altura */
+    .skills.section,
+    .skills .section-container {
+        overflow: visible !important;
+        height: auto !important;
+        max-height: none !important;
+    }
+    
     /* Garantir que skill level apareça */
     .skill-level {
-        display: block !important;
+        display: inline-block !important;
         visibility: visible !important;
         opacity: 1 !important;
+        font-size: 0.85rem !important;
+        color: #7f8c8d !important;
     }
     
-    /* Garantir que ferramentas apareçam */
+    /* Garantir que ferramentas apareçam - TODAS AS 8 */
     .tools-grid {
-        grid-template-columns: repeat(2, 1fr) !important; /* 2 colunas no mobile */
-        gap: 1rem;
-        padding: 1rem 0.5rem;
-        width: 100%;
-        overflow: visible;
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important; /* 2 colunas = 4 linhas para 8 itens */
+        grid-template-rows: repeat(4, auto) !important; /* 4 linhas explícitas */
+        gap: 1rem !important;
+        padding: 1rem 0.5rem !important;
+        width: 100% !important;
+        overflow: visible !important;
+        height: auto !important;
+        max-height: none !important;
+        min-height: 480px !important; /* Garante espaço para 4 linhas */
     }
     
-    .tool-card {
+    /* Força exibição de TODOS os tool-cards */
+    .tool-card,
+    .tool-card:nth-child(1),
+    .tool-card:nth-child(2),
+    .tool-card:nth-child(3),
+    .tool-card:nth-child(4),
+    .tool-card:nth-child(5),
+    .tool-card:nth-child(6),
+    .tool-card:nth-child(7),
+    .tool-card:nth-child(8) {
         display: flex !important;
         visibility: visible !important;
         opacity: 1 !important;
-        min-height: 120px;
-        padding: 1rem 0.5rem;
-        width: 100%;
-        box-sizing: border-box;
+        position: relative !important;
+        min-height: 110px !important;
+        max-height: none !important;
+        padding: 1rem 0.5rem !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        background: #fff !important;
+        border-radius: 10px !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
     }
     
     .tool-card i {
-        font-size: 2rem;
-        margin-bottom: 0.5rem;
+        font-size: 2rem !important;
+        margin-bottom: 0.5rem !important;
         display: block !important;
+        visibility: visible !important;
     }
     
     .tool-card span {
-        font-size: 0.8rem;
+        font-size: 0.8rem !important;
         display: block !important;
+        visibility: visible !important;
+        text-align: center !important;
+        color: #2c3e50 !important;
     }
     
     .tool-card small {
         display: block !important;
-        font-size: 0.65rem;
+        visibility: visible !important;
+        font-size: 0.65rem !important;
     }
     
     /* Ajustar skill items para mobile */
@@ -2870,6 +2976,7 @@ html, body {
         display: grid !important;
         gap: 2rem;
         width: 100%;
+        overflow: visible !important;
     }
     
     .skill-category {
@@ -2878,6 +2985,9 @@ html, body {
         opacity: 1 !important;
         width: 100%;
         padding: 1.5rem 1rem;
+        overflow: visible !important;
+        height: auto !important;
+        max-height: none !important;
     }
     
     .skills-list {
@@ -2885,31 +2995,44 @@ html, body {
         flex-direction: column !important;
         gap: 1rem;
         width: 100%;
+        overflow: visible !important;
     }
 }
 
 /* Small mobile devices (< 480px) */
 @media (max-width: 480px) {
+    /* Garantir 2 colunas mesmo em telas muito pequenas */
     .tools-grid {
-        grid-template-columns: repeat(2, 1fr) !important; /* Manter 2 colunas em telas menores */
-        gap: 0.8rem;
+        grid-template-columns: repeat(2, 1fr) !important;
+        grid-template-rows: repeat(4, auto) !important;
+        gap: 0.8rem !important;
+        min-height: 450px !important;
     }
     
     .tool-card {
-        min-height: 100px;
-        padding: 0.8rem 0.3rem;
+        min-height: 100px !important;
+        padding: 0.8rem 0.3rem !important;
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
     }
     
     .tool-card i {
-        font-size: 1.8rem;
+        font-size: 1.8rem !important;
     }
     
     .tool-card span {
-        font-size: 0.75rem;
+        font-size: 0.75rem !important;
     }
     
     .skill-category {
-        padding: 1rem 0.75rem;
+        padding: 1rem 0.75rem !important;
+    }
+    
+    .skill-level {
+        display: inline-block !important;
+        visibility: visible !important;
+        font-size: 0.8rem !important;
     }
 }
 

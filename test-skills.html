@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste - Skills Section</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .debug-info {
+            background: #fff;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .debug-info h2 {
+            margin: 0 0 10px 0;
+            color: #3498db;
+        }
+        .tool-card {
+            border: 2px solid red !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="debug-info">
+        <h2>🔍 Teste de Debug - Seção de Skills</h2>
+        <p><strong>Largura da tela:</strong> <span id="screen-width"></span>px</p>
+        <p><strong>Total de tool-cards encontrados:</strong> <span id="total-cards"></span></p>
+        <p><strong>Tool-cards visíveis:</strong> <span id="visible-cards"></span></p>
+    </div>
+
+    <section id="skills" class="skills section">
+        <div class="section-container">
+            <h2 class="section-title">🎯 Ferramentas & Tecnologias - TESTE</h2>
+            
+            <div class="skill-category">
+                <h3><i class="fas fa-tools"></i> Ferramentas & Tecnologias</h3>
+                <div class="tools-grid">
+                    <div class="tool-card featured-tool" data-tool="Python">
+                        <i class="fab fa-python"></i>
+                        <span>Python</span>
+                        <small>Principal</small>
+                    </div>
+                    <div class="tool-card" data-tool="Power BI">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Power BI</span>
+                    </div>
+                    <div class="tool-card" data-tool="PostgreSQL">
+                        <i class="fas fa-database"></i>
+                        <span>PostgreSQL</span>
+                    </div>
+                    <div class="tool-card" data-tool="MySQL">
+                        <i class="fas fa-database"></i>
+                        <span>MySQL</span>
+                    </div>
+                    <div class="tool-card" data-tool="Flask">
+                        <i class="fas fa-flask"></i>
+                        <span>Flask</span>
+                    </div>
+                    <div class="tool-card" data-tool="Git">
+                        <i class="fab fa-git-alt"></i>
+                        <span>Git & GitHub</span>
+                    </div>
+                    <div class="tool-card" data-tool="VS Code">
+                        <i class="fas fa-code"></i>
+                        <span>VS Code</span>
+                    </div>
+                    <div class="tool-card" data-tool="Jupyter">
+                        <i class="fas fa-book-open"></i>
+                        <span>Jupyter</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3><i class="fas fa-code"></i> Teste - Skills com Níveis</h3>
+                <div class="skills-list">
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Python</span>
+                            <span class="skill-level">Intermediário</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%"></div>
+                        </div>
+                        <div class="skill-details">
+                            <small>Pandas, NumPy, Matplotlib</small>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">SQL</span>
+                            <span class="skill-level">Intermediário</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%"></div>
+                        </div>
+                        <div class="skill-details">
+                            <small>MySQL, PostgreSQL</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Debug info
+        function updateDebugInfo() {
+            document.getElementById('screen-width').textContent = window.innerWidth;
+            
+            const allCards = document.querySelectorAll('.tool-card');
+            document.getElementById('total-cards').textContent = allCards.length;
+            
+            let visibleCount = 0;
+            allCards.forEach(card => {
+                const style = window.getComputedStyle(card);
+                if (style.display !== 'none' && style.visibility !== 'hidden' && style.opacity !== '0') {
+                    visibleCount++;
+                    console.log('Card visível:', card.querySelector('span').textContent);
+                } else {
+                    console.log('Card OCULTO:', card.querySelector('span').textContent, {
+                        display: style.display,
+                        visibility: style.visibility,
+                        opacity: style.opacity
+                    });
+                }
+            });
+            
+            document.getElementById('visible-cards').textContent = visibleCount;
+            
+            // Log grid info
+            const grid = document.querySelector('.tools-grid');
+            if (grid) {
+                const gridStyle = window.getComputedStyle(grid);
+                console.log('Grid CSS:', {
+                    display: gridStyle.display,
+                    gridTemplateColumns: gridStyle.gridTemplateColumns,
+                    gap: gridStyle.gap,
+                    height: gridStyle.height,
+                    overflow: gridStyle.overflow
+                });
+            }
+        }
+        
+        updateDebugInfo();
+        window.addEventListener('resize', updateDebugInfo);
+    </script>
+</body>
+</html>
