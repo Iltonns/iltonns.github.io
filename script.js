@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Mobile Menu Toggle
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
+    const body = document.body;
     
     if (mobileMenuToggle && navMenu) {
         mobileMenuToggle.addEventListener('click', () => {
@@ -9,8 +10,11 @@ document.addEventListener('DOMContentLoaded', function() {
             const icon = mobileMenuToggle.querySelector('i');
             if (navMenu.classList.contains('active')) {
                 icon.classList.replace('fa-bars', 'fa-times');
+                // Prevent body scroll when menu is open
+                body.style.overflow = 'hidden';
             } else {
                 icon.classList.replace('fa-times', 'fa-bars');
+                body.style.overflow = '';
             }
         });
         
@@ -18,8 +22,26 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
-                mobileMenuToggle.querySelector('i').classList.replace('fa-times', 'fa-bars');
+                const icon = mobileMenuToggle.querySelector('i');
+                if (icon) {
+                    icon.classList.replace('fa-times', 'fa-bars');
+                }
+                body.style.overflow = '';
             });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (navMenu.classList.contains('active') && 
+                !navMenu.contains(e.target) && 
+                !mobileMenuToggle.contains(e.target)) {
+                navMenu.classList.remove('active');
+                const icon = mobileMenuToggle.querySelector('i');
+                if (icon) {
+                    icon.classList.replace('fa-times', 'fa-bars');
+                }
+                body.style.overflow = '';
+            }
         });
     }
 
