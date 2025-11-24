@@ -1985,6 +1985,27 @@ body.dark-theme .skill-tag {
     margin-bottom: 0.5rem;
 }
 
+.credential-info {
+    font-size: 0.85rem;
+    color: #5a6c7d;
+    margin-top: 0.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.credential-info strong {
+    color: #34495e;
+    font-weight: 600;
+}
+
+.credential-id {
+    font-family: 'Courier New', monospace;
+    background: #f0f3f5;
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    color: #2c3e50;
+}
+
 .education-status {
     padding: 0.2rem 0.8rem;
     border-radius: 12px;
@@ -2354,6 +2375,19 @@ body.dark-theme .intro-description,
 body.dark-theme .expertise-content p,
 body.dark-theme .education-content p {
     color: rgba(255, 255, 255, 0.8);
+}
+
+body.dark-theme .credential-info {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+body.dark-theme .credential-info strong {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+body.dark-theme .credential-id {
+    background: #1a1d24;
+    color: #64b5f6;
 }
 
 body.dark-theme .footer {
