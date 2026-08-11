@@ -219,7 +219,7 @@ h1, h2, h3 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1974&q=80') center/cover;
+    background: url('assets/Programando.png') center/cover;
     opacity: 0.1;
     z-index: 0;
 }
@@ -1022,6 +1022,19 @@ h1, h2, h3 {
     border-radius: 0;
     background: #f0f4f8;
     transition: transform 0.5s ease;
+}
+
+.project-image.dual-image {
+    display: flex;
+}
+
+.project-image.dual-image img {
+    width: 50%;
+    border-right: 2px solid #fff;
+}
+
+.project-image.dual-image img:last-child {
+    border-right: none;
 }
 
 .project-card:hover .project-image img {
@@ -2182,8 +2195,10 @@ body.dark-theme .skill-tag {
 
 .footer-bottom {
     display: flex;
-    justify-content: center; /* Centraliza o conteúdo */
+    justify-content: center;
     align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 2rem;
     padding-top: 2rem;
 }
 
@@ -2195,6 +2210,18 @@ body.dark-theme .skill-tag {
     width: 100%;
 }
 
+@media (min-width: 769px) {
+    .footer-bottom-inner {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .footer-copyright {
+        text-align: left;
+    }
+}
+
 .footer-copyright p {
     margin: 0.2rem 0;
     color: rgba(255, 255, 255, 0.7);
@@ -2204,11 +2231,6 @@ body.dark-theme .skill-tag {
 .footer-subtitle {
     font-size: 0.8rem;
     color: rgba(255, 255, 255, 0.6);
-}
-
-.footer-subtitle i {
-    color: #e74c3c;
-    margin: 0 0.2rem;
 }
 
 .footer-social {
