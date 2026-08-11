@@ -1639,6 +1639,35 @@ body.dark-theme .back-to-top:hover {
     color: var(--text-light);
 }
 
+#theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: #ffffff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+    transition: all 0.3s ease;
+}
+
+#theme-toggle:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.5);
+}
+
+body.dark-theme #theme-toggle {
+    background: var(--accent-color);
+}
+
+body.dark-theme #theme-toggle:hover {
+    background: var(--secondary-color);
+}
+
 /* Dark theme para novos elementos */
 body.dark-theme .featured-tool {
     background: linear-gradient(135deg, #23272f, #2c3340);
@@ -2410,6 +2439,50 @@ body.dark-theme .credential-info strong {
 body.dark-theme .credential-id {
     background: #1a1d24;
     color: #64b5f6;
+}
+
+/* Corrige títulos e subtítulos com cor fixa escura que ficavam ilegíveis
+   dentro de containers que já viram escuros no tema dark */
+body.dark-theme .stat-title {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+body.dark-theme .stat-value {
+    color: var(--text-light);
+}
+
+body.dark-theme .timeline-content h3 {
+    color: var(--text-light);
+}
+
+body.dark-theme .timeline-company {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+body.dark-theme .about-education h3,
+body.dark-theme .education-category h4 {
+    color: var(--text-light);
+}
+
+body.dark-theme .tool-card i {
+    color: var(--secondary-color);
+}
+
+body.dark-theme .tool-card span {
+    color: var(--text-light) !important;
+}
+
+body.dark-theme .expertise-section h4,
+body.dark-theme .journey-section h4 {
+    color: var(--text-light);
+}
+
+body.dark-theme .social-link {
+    color: var(--text-light);
+}
+
+body.dark-theme .social-link:hover {
+    color: var(--secondary-color);
 }
 
 body.dark-theme .footer {
